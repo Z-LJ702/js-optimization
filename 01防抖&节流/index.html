@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;"></div>
+<!-- 防抖 -->
+<!-- 非立即执行版本 -->
+<!-- <script src="./防抖1.js"></script> -->
+
+<!-- 立即执行版本 -->
+<!-- <script src="./防抖2.js"></script> -->
+
+<!-- 综合版本 immediate 传true为立即 传false为非立即 -->
+<!-- <script src="./防抖3=(1+2).js"></script> -->
+
+<!-- 节流 -->
+<!-- 时间戳版本 立即执行-->
+<!-- <script src="./节流1.js"></script> -->
+
+<!-- 定时器版本 非立即执行 -->
+<!-- <script src="./节流2.js"></script> -->
+
+<!-- 节流 综合版本 -->
+<script src="./节流3=(1+2).js"></script>
+
+<script>
+    let num = 1;
+    let content = document.getElementById('content');
+
+    function count() {
+        content.innerHTML = num++;
+    };
+    content.onmousemove = count;
+
+    //  防抖函数调用
+    // content.onmousemove = debounce(count,1000);
+
+    //  节流函数调用
+    content.onmousemove = throttle(count,1000,2)
+</script>
+
+</body>
+</html>
